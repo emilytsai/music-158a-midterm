@@ -63,11 +63,11 @@ for row in data:
 
     # decode trippolyline
     latlong_list = polyline_mapper.decode(row["trippolyline"])
-    latlong_speed = round((dropoff - pickup) / len(latlong_list), 10)
+    latlong_speed = round((dropoff - pickup) / (2*len(latlong_list)), 10)
     bundle_polyline(latlong_list, latlong_speed, "trip", latlong_list)
 
     # decode nextpolyline
     next_latlong = polyline_mapper.decode(row["nextpolyline"])
-    next_speed = round((next_pickup - dropoff) / len(next_latlong), 10)
+    next_speed = round((next_pickup - dropoff) / (2*len(next_latlong)), 10)
     bundle_polyline(next_latlong, next_speed, "delay", next_latlong)
 
