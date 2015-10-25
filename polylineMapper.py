@@ -1,21 +1,22 @@
-def decode(point_str):
-    """
-    * Credit to: signed0 on GitHub
-    * https://gist.github.com/signed0/2031157
-    * "Google Polyline Encoder & Decoder"
+"""
+* credit to: signed0 on GitHub
+* https://gist.github.com/signed0/2031157
+* "Google Polyline Encoder & Decoder"
 
-    Decodes a polyline that has been encoded using Google's algorithm
-    http://code.google.com/apis/maps/documentation/polylinealgorithm.html
-    
-    This is a generic method that returns a list of (latitude, longitude) 
-    tuples.
-    
-    :param point_str: Encoded polyline string.
-    :type point_str: string
-    :returns: List of 2-tuples where each tuple is (latitude, longitude)
-    :rtype: list
-    """
-            
+Decodes a polyline that has been encoded using Google's algorithm
+http://code.google.com/apis/maps/documentation/polylinealgorithm.html
+
+This is a generic method that returns a list of (latitude, longitude) 
+tuples.
+
+:param point_str: Encoded polyline string.
+:type point_str: string
+:returns: List of 2-tuples where each tuple is (latitude, longitude)
+:rtype: list
+"""
+
+def decode(point_str):
+
     # sone coordinate offset is represented by 4 to 5 binary chunks
     coord_chunks = [[]]
     for char in point_str:

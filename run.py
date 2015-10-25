@@ -1,24 +1,37 @@
-from multiprocessing import Process
+"""
+run the program:
+1. open maxFile.maxpat
+2. in Terminal, cd into the project directory and
+   run "python run.py arg1 *arg2 *arg3 *arg4"
+* NOTE: later versions of Python are not compatible with OSC.py--MUST use python version 1.x
+"""
+
+import sys
 import csv
-import read_send
+import multiprocessing
+import readSend
+import getCoords
 
+files = []
+coordinates = []
+if len(sys.argv) < 2 or len(sys.argv) > 5:
+        sys.exit("ERROR: incorrect number of arguments. please run 'python run.py arg1 *arg2 *arg3 *arg4' where arg2-arg4 are optional arguments.")
+else:
+    for x in range(len(sys.argv) - 1):
+        data = csv.DictReader(open(sys.argv[x + 1], 'rU'))
+        coords = getCoords.get(data)
+        coordinates += [coords]
+        data = csv.DictReader(open(sys.argv[x + 1], 'rU'))
+        files += [data]
 
-data1 = csv.DictReader(open('output1.csv', 'rU'))
-data2 = csv.DictReader(open('output2.csv', 'rU'))
-data3 = csv.DictReader(open('output3.csv', 'rU'))
-data4 = csv.DictReader(open('output4.csv', 'rU'))
+datafiles = {'data' : files, 'coords' : coordinates}
 
-read_send.unpack(data2)
-# read_send.unpack(client1, data1)
+def startProgram():
+    socket = 15800
+    if __name__ == "__main__":
+        for x in range(len(datafiles['data'])):
+            p = multiprocessing.Process(target=readSend.unpack, args=(datafiles['data'][x], datafiles['coords'][x], socket))
+            p.start()
+            socket += 1
 
-# def runInParallel(*args):
-#     processes = []
-#     for x in args:
-#         thread = read_send.ReadSend(x)
-#         process = Process(thread.begin())
-#         process.start()
-#         processes.append(process)
-#     for p in processes:
-#         p.join()
-
-# runInParallel(data1, data2, data3, data4)
+startProgram()

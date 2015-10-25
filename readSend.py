@@ -1,23 +1,22 @@
+"""
+iterate through each row of the data file to append relevant data to an OSC bundle
+send the bundle of information through UDP socket and into the maxFile
+"""
+
 from __future__ import division
 from OSC import OSCClient, OSCBundle
 import csv
 import time
-import polyline_mapper
+import polylineMapper
 
+def unpack(data, all_coords, socket):
+    cX = all_coords[0]
+    cY = all_coords[1]
 
-# data = csv.DictReader(open('output1.csv', 'rU'))
-
-
-# def unpack(udpsocket, datafile):
-#     client = OSCClient()
-#     client.connect(("localhost", udpsocket))
-
-#     data = csv.DictReader(open(datafile, 'rU'))
-
-def unpack(data, coordsX, coordsY):
-
+    # client = OSCClient()
+    # client.connect(("localhost", 15815))
     client = OSCClient()
-    client.connect(("localhost", 15815))
+    client.connect(("localhost", socket))
 
     """ prepare and send OSC bundles to Max from a list of tuples of coordinates """
     def bundle_polyline(coordinates, speed, polyline_type, lst, coordsX, coordsY):
@@ -38,23 +37,17 @@ def unpack(data, coordsX, coordsY):
             # append longX and latY to bundle
             bundle.append({'addr': "/longX", 'args': [pair[0]]})
             bundle.append({'addr': "/latY", 'args': [pair[1]]})
-
-            # append time stamps to bundle
-            # bundle.append({'addr': "/pickupTime", 'args': [pickup]})
-            # bundle.append({'addr': "/dropoffTime", 'args': [dropoff]})
-            # bundle.append({'addr': "/nextPickupTime", 'args': [next_pickup]})
             
             # append start/end longX and latY of coordinates list
             x_vals = [coords[0] for coords in coordinates]
             bundle.append({'addr': "/startX", 'args': [x_vals[0]]})
-            bundle.append({'addr': "/endX", 'args': [x_vals[len(x_vals - 1)]]})
+            bundle.append({'addr': "/endX", 'args': [x_vals[len(x_vals) - 1]]})
             y_vals = [coords[1] for coords in coordinates]
             bundle.append({'addr': "/startY", 'args': [y_vals[0]]})
-            bundle.append({'addr': "/endY", 'args': [y_vals[len(y_vals - 1)]]})
+            bundle.append({'addr': "/endY", 'args': [y_vals[len(y_vals) - 1]]})
 
             # append speed
             bundle.append({'addr': "/speed", 'args': [speed]})
-            bundle.append({'addr': "/lenOfList", 'args': [len(lst)]})
 
             # send bundle to Max:
             client.send(bundle)
@@ -78,12 +71,13 @@ def unpack(data, coordsX, coordsY):
         next_pickup = (int(next_pickup[0])*60) + int(next_pickup[1])  
 
         """ decode trippolyline """
-        latlong_list = polyline_mapper.decode(row["trippolyline"])
+        latlong_list = polylineMapper.decode(row["trippolyline"])
         latlong_speed = round((dropoff - pickup) / (2*len(latlong_list)), 10)  # translate 1 minute in RT == 0.5 seconds
-        bundle_polyline(latlong_list, latlong_speed, "trip", latlong_list, coordsX, coordsY)
+        bundle_polyline(latlong_list, latlong_speed, "trip", latlong_list, cX, cY)
 
         """ decode nextpolyline """
-        next_latlong = polyline_mapper.decode(row["nextpolyline"])
+        next_latlong = polylineMapper.decode(row["nextpolyline"])
         next_speed = round((next_pickup - dropoff) / (2*len(next_latlong)), 10)  # translate 1 minute in RT == 0.5 seconds
-        bundle_polyline(next_latlong, next_speed, "delay", next_latlong, coordsX, coordsY)
+        bundle_polyline(next_latlong, next_speed, "delay", next_latlong, cX, cY)
 
+    client.close()
