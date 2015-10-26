@@ -66,4 +66,4 @@ def decode(point_str):
         # they were encoded
         points.append((round(prev_x, 6), round(prev_y, 6)))
     
-    return points    
+    return points

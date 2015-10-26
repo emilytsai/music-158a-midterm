@@ -19,7 +19,7 @@ def unpack(data, all_coords, socket):
     client.connect(("localhost", socket))
 
     """ prepare and send OSC bundles to Max from a list of tuples of coordinates """
-    def bundle_polyline(coordinates, speed, polyline_type, lst, coordsX, coordsY):
+    def bundle_polyline(coordinates, speed, polyline_type, passengers, coordsX, coordsY):
         for pair in coordinates:
 
             # create an OSC bundle:
@@ -46,8 +46,8 @@ def unpack(data, all_coords, socket):
             bundle.append({'addr': "/startY", 'args': [y_vals[0]]})
             bundle.append({'addr': "/endY", 'args': [y_vals[len(y_vals) - 1]]})
 
-            # append speed
-            bundle.append({'addr': "/speed", 'args': [speed]})
+            # append passengers
+            bundle.append({'addr': "/passengers", 'args': [passengers]})
 
             # send bundle to Max:
             client.send(bundle)
@@ -72,12 +72,14 @@ def unpack(data, all_coords, socket):
 
         """ decode trippolyline """
         latlong_list = polylineMapper.decode(row["trippolyline"])
+        passengers = row["passengers"]
         latlong_speed = round((dropoff - pickup) / (2*len(latlong_list)), 10)  # translate 1 minute in RT == 0.5 seconds
-        bundle_polyline(latlong_list, latlong_speed, "trip", latlong_list, cX, cY)
+        bundle_polyline(latlong_list, latlong_speed, "trip", passengers, cX, cY)
 
         """ decode nextpolyline """
         next_latlong = polylineMapper.decode(row["nextpolyline"])
+        passengers = 0
         next_speed = round((next_pickup - dropoff) / (2*len(next_latlong)), 10)  # translate 1 minute in RT == 0.5 seconds
-        bundle_polyline(next_latlong, next_speed, "delay", next_latlong, cX, cY)
+        bundle_polyline(next_latlong, next_speed, "delay", passengers, cX, cY)
 
     client.close()
