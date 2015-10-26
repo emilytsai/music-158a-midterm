@@ -1,9 +1,5 @@
 """
-run the program:
-1. open maxFile.maxpat
-2. in Terminal, cd into the project directory and
-   run "python run.py arg1 *arg2 *arg3 *arg4"
-* NOTE: later versions of Python are not compatible with OSC.py--MUST use python version 1.x
+sets up csv readers and starts the program
 """
 
 import sys
