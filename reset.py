@@ -1,5 +1,5 @@
 """
-reset all UDP sockets to turn off any remaining sounds in Max
+Reset and close all UDP sockets to silence any remaining sounds in Max.
 """
 
 from OSC import OSCClient, OSCBundle

@@ -1,19 +1,18 @@
-# Track 158: Taxis
+# Track 158: Taxis #
 
-### RUNNING THE PROGRAM
+### RUNNING THE PROGRAM ###
 
-1. Open `maxFile.maxpat`. Make sure the `ezdac~` sound is turned on and the `gain~` volume is adjusted accordingly.
+Note: Later versions of Python are not compatible with `OSC.py`; use the `python` command.
+
+1. Open `taxisounds.maxpat`. Make sure the `ezdac~` sound is turned on and the `gain~` volume is adjusted accordingly.
 
 2. In Terminal, `cd ~\music158-midterm` into the main project directory and run `python run.py arg1 *arg2 *arg3 *arg4`, with up to four arguments (four taxis) that correspond to the CSV file(s) you wish to run the program with. (Note: `arg1` is required, `*arg2 *arg3 *arg4` are optional.)
 
-
-* NOTE: Later versions of Python are not compatible with `OSC.py`; use the `python` command and not `python2` or `python3` commands.
-
-* Example: `python run.py output2.csv output1.csv output3.csv output4.csv` OR `python run.py output2.csv output1.csv`
+    * Example: `python run.py output3.csv output2.csv output4.csv output1.csv` OR `python run.py output2.csv output1.csv`
 
 3. To end the program early, use keyboard command `CONTROL + C` in the Terminal. To clear any remaining sounds after halting the program, run `python reset.py` in Terminal to reset the UDP sockets until the next call to the program.
 
-### ABOUT
+### ABOUT ###
 
 This program is inspired by Chris Whong's [NYC Taxis: A Day in the Life](http://nyctaxi.herokuapp.com), a data visualization of a single NYC taxi over 24 hours, and his open source GitHub repository: [taxitracker](https://github.com/chriswhong/taxitracker).
 
