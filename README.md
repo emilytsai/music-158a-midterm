@@ -18,9 +18,9 @@ Note: Later versions of Python are not compatible with `OSC.py`; use Python2 wit
 
 ### ABOUT ###
 
-UC Berkeley
-Course: MUSIC 158A - Sound and Music Computing with CNMAT Technologies
-Semester: Fall 2015
+UC Berkeley | 
+Course: MUSIC 158A - Sound and Music Computing with CNMAT Technologies | 
+Semester: Fall 2015 |
 
 Assignment: "Create something cool in Max."
 
