@@ -20,9 +20,9 @@ To view all the patches in the Max file, switch from Presentation Mode to Patchi
 
 ### ABOUT ###
 
-**UC Berkeley | **
-**Course: MUSIC 158A - Sound and Music Computing with CNMAT Technologies | **
-**Semester: Fall 2015**
+**UC Berkeley | 
+Course: MUSIC 158A - Sound and Music Computing with CNMAT Technologies | 
+Semester: Fall 2015**
 
 
 Assignment: "Create something cool in Max."
