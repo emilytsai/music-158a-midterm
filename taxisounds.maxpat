@@ -10,6 +10,7 @@
 		}
 ,
 		"rect" : [ 34.0, 79.0, 1206.0, 631.0 ],
+		"bgcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -43,7 +44,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1728.833374, 973.200012, 59.0, 20.0 ],
-					"presentation_rect" : [ 1735.06665, 879.200012, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "rectangle"
 				}
@@ -56,7 +56,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1649.466675, 973.200012, 50.0, 20.0 ],
-					"presentation_rect" : [ 1649.466675, 881.166748, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "triangle"
 				}
@@ -69,7 +68,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1569.666626, 973.200012, 60.0, 20.0 ],
-					"presentation_rect" : [ 1561.866577, 886.399963, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "sawtooth"
 				}
@@ -92,16 +90,16 @@
 					"fontname" : "Andale Mono",
 					"fontsize" : 18.0,
 					"id" : "obj-6",
-					"linecount" : 8,
+					"linecount" : 9,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2168.0, 1718.766846, 509.0, 168.0 ],
+					"patching_rect" : [ 2168.0, 1718.766846, 509.0, 189.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 8,
-					"presentation_rect" : [ 576.000122, 6.166626, 503.666809, 168.0 ],
+					"presentation_linecount" : 9,
+					"presentation_rect" : [ 576.000122, 11.166626, 508.0, 189.0 ],
 					"style" : "",
-					"text" : "Step 1: Make sure the \"ezdac\" is turned on (light blue); adjust the volume accordingly.\nStep 2: Open a Terminal window. Make sure you are in the directory containing all the files for this project.\nStep 3: Start the program with \"python run.py outputX.csv outputX.csv outputX.csv outputX.csv with X as 1, 2, 3, 4"
+					"text" : "Step 1: Make sure the \"ezdac\" speaker is turned on (light blue); adjust the volume accordingly.\nStep 2: Open a Terminal window. \"cd\" into the directory containing all the files for this project.\nStep 3: Start the program with \"python run.py outputX.csv outputX.csv outputX.csv outputX.csv\" with X as 1, 2, 3, or 4"
 				}
 
 			}
@@ -208,7 +206,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 2101.0, 1672.266724, 145.333374, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 52.333313, 42.93335, 385.333374, 102.0 ],
+					"presentation_rect" : [ 52.333313, 47.93335, 385.333374, 102.0 ],
 					"style" : ""
 				}
 
@@ -221,7 +219,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 2101.0, 1718.766846, 45.0, 45.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 450.666687, 42.93335, 102.0, 102.0 ],
+					"presentation_rect" : [ 450.666687, 47.93335, 102.0, 102.0 ],
 					"style" : ""
 				}
 
@@ -1039,7 +1037,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 902.666687, 482.166626, 500.0, 500.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 52.333313, 192.166626, 500.0, 500.0 ],
+					"presentation_rect" : [ 52.333313, 205.166626, 500.0, 500.0 ],
 					"spaces" : [ "space", 4, 0.0, 0.5, "/sine", 0.75, 0.375, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, 0.5, 0.0, "/sawtooth", 0.75, 0.5625, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, 0.0, -0.5, "/triangle", 0.75, 0.75, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, -0.5, 0.0, "/rectangle", 0.5625, 0.75, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0 ],
 					"xmin" : -1.0,
 					"ymin" : -1.0
@@ -1135,13 +1133,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-169",
-					"linecount" : 17,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1486.0, 364.56665, 150.0, 251.0 ],
-					"text" : "/curr : \"trip\",\n/minX : -74.0058,\n/maxX : -73.9156,\n/minY : 40.6717,\n/maxY : 40.8231,\n/longX : -73.98,\n/latY : 40.7605,\n/startX : -73.9869,\n/endX : -73.9575,\n/startY : 40.751,\n/endY : 40.7735,\n/passengers : \"2\",\n/x : 0.286443,\n/y : 0.586584,\n/movePointer : [\"move\", 0.286443, 0.586584]",
+					"patching_rect" : [ 1486.0, 364.56665, 150.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -1193,13 +1189,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-102",
-					"linecount" : 12,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 55.0, 79.666626, 150.0, 184.0 ],
-					"text" : "/curr : \"delay\",\n/minX : -74.0058,\n/maxX : -73.9156,\n/minY : 40.6717,\n/maxY : 40.8231,\n/longX : -73.9574,\n/latY : 40.7701,\n/startX : -73.9703,\n/endX : -73.9541,\n/startY : 40.7966,\n/endY : 40.7687,\n/passengers : 0",
+					"patching_rect" : [ 55.0, 79.666626, 150.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -1209,13 +1203,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-68",
-					"linecount" : 18,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 55.0, 582.100098, 308.0, 265.0 ],
-					"text" : "/curr : \"delay\",\n/minX : -74.0058,\n/maxX : -73.9156,\n/minY : 40.6717,\n/maxY : 40.8231,\n/longX : -73.9574,\n/latY : 40.7701,\n/startX : -73.9703,\n/endX : -73.9541,\n/startY : 40.7966,\n/endY : 40.7687,\n/passengers : 0,\n/chromatic : [0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24],\n/octaves : [36, 48, 60, 72],\n/octave : 3.20152,\n/note : 84,\n/amp : 0.2",
+					"patching_rect" : [ 55.0, 582.100098, 308.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -2072,7 +2064,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 3542.333496, 518.166626, 500.0, 500.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 576.000122, 192.166626, 500.0, 500.0 ],
+					"presentation_rect" : [ 576.000122, 205.166626, 500.0, 500.0 ],
 					"spaces" : [ "space", 4, 0.5, 0.0, "/sine", 0.75, 0.375, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, 0.0, -0.5, "/sawtooth", 0.75, 0.5625, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, -0.5, 0.0, "/triangle", 0.75, 0.75, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, 0.0, 0.5, "/rectangle", 0.5625, 0.75, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0 ],
 					"xmin" : -1.0,
 					"ymin" : -1.0
@@ -2224,13 +2216,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-287",
-					"linecount" : 12,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2694.666748, 119.666626, 150.0, 184.0 ],
-					"text" : "/curr : \"delay\",\n/minX : -74.0145,\n/maxX : -73.8945,\n/minY : 40.6931,\n/maxY : 40.8895,\n/longX : -73.9799,\n/latY : 40.7489,\n/startX : -73.9934,\n/endX : -73.9796,\n/startY : 40.7246,\n/endY : 40.7493,\n/passengers : 0",
+					"patching_rect" : [ 2694.666748, 119.666626, 150.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -2240,13 +2230,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-288",
-					"linecount" : 18,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2694.666748, 618.100098, 308.0, 265.0 ],
-					"text" : "/curr : \"delay\",\n/minX : -74.0145,\n/maxX : -73.8945,\n/minY : 40.6931,\n/maxY : 40.8895,\n/longX : -73.9799,\n/latY : 40.7489,\n/startX : -73.9934,\n/endX : -73.9796,\n/startY : 40.7246,\n/endY : 40.7493,\n/passengers : 0,\n/chromatic : [0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24],\n/octaves : [36, 48, 60, 72],\n/octave : 3.76719,\n/note : 79,\n/amp : 0.2",
+					"patching_rect" : [ 2694.666748, 618.100098, 308.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -3103,7 +3091,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 3660.0, 2273.399902, 500.0, 500.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 576.000122, 718.833252, 500.0, 500.0 ],
+					"presentation_rect" : [ 576.000122, 731.833252, 500.0, 500.0 ],
 					"spaces" : [ "space", 4, 0.0, -0.5, "/sine", 0.75, 0.375, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, -0.5, 0.0, "/sawtooth", 0.75, 0.5625, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, 0.0, 0.5, "/triangle", 0.75, 0.75, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, 0.5, 0.0, "/rectangle", 0.5625, 0.75, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0 ],
 					"xmin" : -1.0,
 					"ymin" : -1.0
@@ -3199,13 +3187,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-332",
-					"linecount" : 17,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 4243.333008, 2155.800049, 150.0, 251.0 ],
-					"text" : "/curr : \"trip\",\n/minX : -74.0167,\n/maxX : -73.7857,\n/minY : 40.6412,\n/maxY : 40.8211,\n/longX : -73.9679,\n/latY : 40.7481,\n/startX : -73.7877,\n/endX : -73.9824,\n/startY : 40.6415,\n/endY : 40.755,\n/passengers : \"1\",\n/x : 0.211116,\n/y : 0.594187,\n/movePointer : [\"move\", 0.211116, 0.594187]",
+					"patching_rect" : [ 4243.333008, 2155.800049, 150.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -3257,13 +3243,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-338",
-					"linecount" : 12,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2812.333252, 1878.333252, 150.0, 184.0 ],
-					"text" : "/curr : \"trip\",\n/minX : -74.0167,\n/maxX : -73.7857,\n/minY : 40.6412,\n/maxY : 40.8211,\n/longX : -73.9723,\n/latY : 40.746,\n/startX : -73.7877,\n/endX : -73.9824,\n/startY : 40.6415,\n/endY : 40.755,\n/passengers : \"1\"",
+					"patching_rect" : [ 2812.333252, 1878.333252, 150.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -3273,13 +3257,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-339",
-					"linecount" : 18,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2812.333252, 2373.333496, 308.0, 265.0 ],
-					"text" : "/curr : \"delay\",\n/minX : -74.0167,\n/maxX : -73.7857,\n/minY : 40.6412,\n/maxY : 40.8211,\n/longX : -73.7877,\n/latY : 40.6415,\n/startX : -73.8707,\n/endX : -73.7877,\n/startY : 40.7738,\n/endY : 40.6415,\n/passengers : 0,\n/chromatic : [0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24],\n/octaves : [36, 48, 60, 72],\n/octave : 9.21126e-05,\n/note : 59,\n/amp : 0.2",
+					"patching_rect" : [ 2812.333252, 2373.333496, 308.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -4136,7 +4118,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 897.333374, 2296.833252, 500.0, 500.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 52.333313, 718.833252, 500.0, 500.0 ],
+					"presentation_rect" : [ 52.333313, 731.833252, 500.0, 500.0 ],
 					"spaces" : [ "space", 4, -0.5, 0.0, "/sine", 0.75, 0.375, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, 0.0, 0.5, "/sawtooth", 0.75, 0.5625, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, 0.5, 0.0, "/triangle", 0.75, 0.75, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0, 0.0, -0.5, "/rectangle", 0.5625, 0.75, 0.1875, 0.0, 2.0, 6250.000488, 0.05, 0.5, 0 ],
 					"xmin" : -1.0,
 					"ymin" : -1.0
@@ -4232,13 +4214,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-383",
-					"linecount" : 17,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1480.666626, 2179.233398, 150.0, 251.0 ],
-					"text" : "/curr : \"delay\",\n/minX : -74.0011,\n/maxX : -73.8701,\n/minY : 40.7379,\n/maxY : 40.8114,\n/longX : -73.9573,\n/latY : 40.7743,\n/startX : -73.9549,\n/endX : -73.9629,\n/startY : 40.7733,\n/endY : 40.7724,\n/passengers : 0,\n/x : 0.334728,\n/y : 0.495251,\n/movePointer : [\"move\", 0.334728, 0.495251]",
+					"patching_rect" : [ 1480.666626, 2179.233398, 150.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -4290,13 +4270,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-389",
-					"linecount" : 12,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 49.666656, 1872.333252, 150.0, 184.0 ],
-					"text" : "/curr : \"trip\",\n/minX : -74.0011,\n/maxX : -73.8701,\n/minY : 40.7379,\n/maxY : 40.8114,\n/longX : -73.9818,\n/latY : 40.7522,\n/startX : -73.9768,\n/endX : -73.991,\n/startY : 40.7591,\n/endY : 40.7505,\n/passengers : \"1\"",
+					"patching_rect" : [ 49.666656, 1872.333252, 150.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -4306,13 +4284,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-390",
-					"linecount" : 18,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 49.666656, 2396.766602, 308.0, 265.0 ],
-					"text" : "/curr : \"delay\",\n/minX : -74.0011,\n/maxX : -73.8701,\n/minY : 40.7379,\n/maxY : 40.8114,\n/longX : -73.9573,\n/latY : 40.7743,\n/startX : -73.9549,\n/endX : -73.9629,\n/startY : 40.7733,\n/endY : 40.7724,\n/passengers : 0,\n/chromatic : [0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24],\n/octaves : [36, 48, 60, 72],\n/octave : 0.677365,\n/note : 43,\n/amp : 0.2",
+					"patching_rect" : [ 49.666656, 2396.766602, 308.0, 34.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
