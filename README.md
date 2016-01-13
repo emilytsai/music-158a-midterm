@@ -2,9 +2,7 @@
 
 ### RUNNING THE PROGRAM ###
 
-Required software: [Python 2](https://www.python.org/), [Max Cycling '74](https://cycling74.com/).
-
-* Note: Later versions of Python are not compatible with `OSC.py`.
+Required software: [Python 2](https://www.python.org/), [Max Cycling '74](https://cycling74.com/). (Note: Later versions of Python are not compatible with `OSC.py`.)
 
 1. Open `taxisounds.maxpat`. Make sure the `ezdac~` speaker is turned on (the speaker color should be light blue) and the `gain~` volume is adjusted accordingly.
 
@@ -16,7 +14,7 @@ Required software: [Python 2](https://www.python.org/), [Max Cycling '74](https:
 
 4. To end the program early, use the keyboard command `CONTROL + C` in the Terminal. To clear any remaining sounds after halting the program, run `python reset.py` in the Terminal to reset the UDP sockets until the next call to the program.
 
-To view all the patches in the Max file, switch from Presentation Mode to Patching Mode by clicking on the projecter image in the bottom left-hand corner of the Max application.
+To view all patches in the Max file, switch from Presentation Mode to Patching Mode by clicking on the projecter image in the bottom left-hand corner of the Max application.
 
 ### ABOUT ###
 
@@ -31,8 +29,8 @@ This program was inspired by Chris Whong's [NYC Taxis: A Day in the Life](http:/
 
 Using the Google API polyline-encoded files from [2013 NYC Taxi Trip Data](http://www.andresmh.com/nyctaxitrips/), a Python script unpacks these data files and translates the taxi's movements into sound by tracking its unique path across New York City. The polylines in the CSV files are unpacked; timed OSC bundles of polyline-decoded taxi movements are created; and the relevant information, such as the longitude and latitude coordinates, are sent to Max. In Max, four voices are set up to track up to four taxis' movements at a time, with each of their sound paths layered together. The latitude, longitude coordinate pairs are scaled in two ways to set up the waveforms and frequency. Whether or not the taxi is currently full or currently empty, and how many passengers the cab is carrying, determines the amplitude.
 
-WAVEFORMS: The taxi's X and Y coordinates are scaled from 0 to 1, according to the RBFI (radial basis function interpolater) patch dimensions. Depending on the taxi's location in the RBFI UI and the locations of the four waveform points, different waveforms (cycle, sawtooth, triangle, and rectangle) are weighted in the RBFI patch by its proximity to each of the individual waveform's inner radius.
+* WAVEFORMS: The taxi's X and Y coordinates are scaled from 0 to 1, according to the RBFI (radial basis function interpolater) patch dimensions. Depending on the taxi's location in the RBFI UI and the locations of the four waveform points, different waveforms (cycle, sawtooth, triangle, and rectangle) are weighted in the RBFI patch by its proximity to each of the individual waveform's inner radius.
 
-FREQUENCY: A list of steps for a two-octave chromatic scale and a list containing starting pitch 'C' for four octaves is set up. The taxi's current Y coordinate is scaled from the single trip's start and end Y coordinates (or the minimum and maximum Y coordinates of taxi's total trips) to a number between 0 to 16, mod 4, taken as the index for the base note in the list of octave starting pitches. The taxi's current X coordinate is scaled from the trip's minimum and maximum X coordinates of the taxi's total trips (or the single trip's start and end X coordinates) to a number between 0 and 14, taken as the index for the step/note away from the base note in the octave.
+* FREQUENCY: A list of steps for a two-octave chromatic scale and a list containing starting pitch 'C' for four octaves is set up. The taxi's current Y coordinate is scaled from the single trip's start and end Y coordinates (or the minimum and maximum Y coordinates of taxi's total trips) to a number between 0 to 16, mod 4, taken as the index for the base note in the list of octave starting pitches. The taxi's current X coordinate is scaled from the trip's minimum and maximum X coordinates of the taxi's total trips (or the single trip's start and end X coordinates) to a number between 0 and 14, taken as the index for the step/note away from the base note in the octave.
 
-AMPLITUDE: Depending on if the taxi is currently full or empty, the amplitude will be set to a higher or lower amplitude, respectively. The more passengers in the cab during the trip, the more dominant the amplitude will be.
+* AMPLITUDE: Depending on if the taxi is currently full or empty, the amplitude will be set to a higher or lower amplitude, respectively. The more passengers in the cab during the trip, the more dominant the amplitude will be.
